@@ -1,0 +1,11 @@
+html,
+body{
+    margin: 0;
+    color: #333;
+    background: #eee;
+    font-family:Tahoma,'Microsoft Yahei','Simsun';
+}
+body {
+    padding: 20px;
+
+}
