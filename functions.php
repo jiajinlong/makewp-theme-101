@@ -13,3 +13,10 @@ function wp101_theme_setup() {
 }
 
 add_action('init', 'wp101_theme_setup');
+
+//禁止wordpress加载google字体
+function coolwp_remove_open_sans_from_wp_core() {
+wp_deregister_style( 'open-sans' );
+wp_register_style( 'open-sans', false );
+wp_enqueue_style('open-sans','');}
+add_action( 'init', 'coolwp_remove_open_sans_from_wp_core' );
