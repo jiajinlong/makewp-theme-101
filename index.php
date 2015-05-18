@@ -1,10 +1,25 @@
 <?php get_header(); ?>
-    <?php if ( have_posts() ) : ?>
-        <?php while ( have_posts() ) : the_post(); ?>
-            <h3><?php the_title(); ?></h3>
-            <small>发布时间: <?php the_time('Y-n-j H:i'); ?> 分类: <?php the_category(); ?></small>
-            <p><?php the_content(); ?></p>
-            <hr>
-        <?php endwhile; ?>
-    <?php endif; ?>
+
+   <div class="row">
+
+       <div class="col-xs-12 col-sm-8">
+
+             <?php if ( have_posts() ) : ?>
+
+                <?php while ( have_posts() ) : the_post(); ?>
+
+                    <?php get_template_part('content', get_post_format()); ?>
+
+                <?php endwhile; ?>
+
+            <?php endif; ?>
+
+       </div>
+
+
+   <div class="col-xs-12 col-sm-4">
+       <?php get_sidebar(); ?>
+   </div>
+</div>
+
 <?php get_footer(); ?>
